@@ -102,5 +102,21 @@
       <a href="https://t.me/+QZmvq1a9yYVlYWQ0" class="button elite-button" target="_blank">☣ HEL COMMUNITY ELITE</a>
     </div>
   </div>
+
+  <!-- BLOCCO MUSICA AUTOMATICA -->
+  <audio id="bgMusic" autoplay loop hidden>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bgMusic');
+    window.addEventListener('load', () => {
+      audio.play().catch(() => {
+        document.body.addEventListener('click', () => {
+          audio.play();
+        }, { once: true });
+      });
+    });
+  </script>
 </body>
 </html>
